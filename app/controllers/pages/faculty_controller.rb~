@@ -1,0 +1,4 @@
+class Pages::FacultyController < ApplicationController
+  def index
+  end
+end

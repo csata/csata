@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Домашняя</title>
+  <%= stylesheet_link_tag    "pages/home", :media => "all" %>
+  <%= javascript_include_tag "/assets/jquery.js", "/assets/jquery_ujs.js", "/assets/pages/home" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= yield %>
+  <div>
+    <%= button_to("Выход", { :controller => "/user/login", :action => "logout" })%>
+  </div>
+</body>
+</html>

@@ -1,0 +1,2 @@
+class MilitaryRank < ActiveRecord::Base
+end

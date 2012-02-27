@@ -1,0 +1,75 @@
+<%= form_tag({:action => "step2"}, :remote => :true) do %>
+  <table>
+    <th>
+      ШАГ 2
+    </th>
+
+    <tr>
+      <td>
+        <label>
+          Фамилия: *
+        </label>
+      </td>
+    
+      <td id = "td_last_name" <%= "style = 'background: red'" if flash[:last_name] %> >
+        <%= text_field_tag :last_name, session[:last_name] %>
+      </td>
+
+      <td id = "error_last_name" style="color: red;">
+	    <%= flash.now[:last_name] if flash.now[:last_name] %>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <label>
+          Имя: *
+        </label>
+      </td>
+    
+      <td id = "td_first_name" <%= "style = 'background: red'" if flash[:first_name] %> >
+        <%= text_field_tag :first_name, session[:first_name] %>
+      </td>
+
+      <td id = "error_first_name" style="color: red;">
+	    <%= flash.now[:first_name] if flash.now[:first_name] %>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <label>
+          Отчество: *
+        </label>
+      </td>
+    
+      <td id = "td_middle_name" <%= "style = 'background: red'" if flash[:middle_name] %> >
+        <%= text_field_tag :middle_name, session[:middle_name] %>
+      </td>
+
+      <td id = "error_middle_name" style="color: red;">
+        <%= flash.now[:middle_name] if flash.now[:middle_name] %>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <label>
+          Пол:
+        </label>
+      </td>
+    
+      <td id = "td_sex">
+        <%= select_tag(:sex, options_from_collection_for_select(Sex.all, :id, :name, session[:sex]), :prompt => "выберите") %>
+      </td>
+    </tr>
+
+    <tr>
+      <td <td colspan = "2">
+        <%= submit_tag "Назад", :id => "back_to_step1"%>
+	<%= submit_tag "Далее", :id => "next_to_step3"%>
+        <%= submit_tag "Завершить", :id => "next_to_step3"%>
+      </td>
+    </tr>
+  </table>
+<% end %>

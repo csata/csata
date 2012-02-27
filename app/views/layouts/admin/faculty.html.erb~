@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Факультеты</title>
+  <%= stylesheet_link_tag    "admin/faculty", :media => "all" %>
+  <%= javascript_include_tag "/assets/jquery.js", "/assets/jquery_ujs.js", "/assets/admin/chair" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<div id = "logout">
+  <%= button_to("Выход", {:controller => "/login", :action => "logout"})%>
+</div>
+<%= yield %>
+
+</body>
+</html>

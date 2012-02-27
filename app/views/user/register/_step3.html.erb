@@ -1,0 +1,108 @@
+<%= form_tag({:action => "step3"}, :remote => true) do %>
+  <table>
+    <th>
+      ШАГ 3
+    </th>
+    <tr>
+      <td>
+        <label>
+          Факультет:
+        </label>
+      </td>
+
+      <td id = "td_faculty">
+	<%= select_tag(:faculty, options_from_collection_for_select(Faculty.all, :id, :name, session[:faculty]), :prompt => "выберите") %>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <label>
+          Кафедра:
+        </label>
+      </td>
+
+      <td id = "td_chair">
+        <div id="chair">
+	  <%= render :partial => "chair", :locals => {:chairs => Chair.all } %>
+	</div>
+        
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <label>
+          Воинское звание:
+        </label>
+      </td>
+
+      <td id = "td_military_rank">
+	<%= select_tag(:military_rank, options_from_collection_for_select(MilitaryRank.all, :id, :name, session[:military_rank]), :prompt => "выберите") %>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <label>
+          Научное звание:
+        </label>
+      </td>
+
+      <td id = "td_scientific_rank">
+	<%= select_tag(:scientific_rank, options_from_collection_for_select(ScientificRank.all, :id, :name, session[:scientific_rank]), :prompt => "выберите") %>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <label>
+          Должность:
+        </label>
+      </td>
+
+      <td id = "td_post">
+	<%= select_tag(:post, options_from_collection_for_select(Post.all, :id, :name, session[:post]), :prompt => "выберите") %>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <label>
+          Телефон:
+        </label>
+      </td>
+    
+      <td id = "td_phone" <%= "style = 'background: red'" if flash[:phone] %> >
+        <%= text_field_tag :phone, session[:phone] %>
+      </td>
+
+      <td id = "error_phone" style="color: red;">
+	<%= flash.now[:phone] if flash.now[:phone] %>
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <label>
+          Комната:
+        </label>
+      </td>
+    
+      <td id = "td_room" <%= "style = 'background: red'" if flash[:room] %> >
+        <%= text_field_tag :room, session[:room] %>
+      </td>
+
+      <td id = "error_room" style="color: red;">
+	<%= flash.now[:room] if flash.now[:room] %>
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan = "2">
+        <%= submit_tag "Назад", :id => "back_to_step2"%>
+        <%= submit_tag "Завершить", :id => "next_to_step4"%>
+      </td>
+    </tr>
+  </table>
+<% end %>

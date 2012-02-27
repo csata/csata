@@ -1,0 +1,40 @@
+require 'spec_helper'
+
+describe Admin::FacultyController do
+
+  describe "GET 'new'" do
+    it "should be redirect" do
+      get 'new'
+      response.should be_redirect
+    end
+  end
+
+  describe "GET 'destroy'" do
+    it "should be redirect" do
+      get 'destroy'
+      response.should be_redirect
+    end
+  end
+
+  describe "GET 'show'" do
+    it "should be redirect" do
+      get 'show'
+      response.should be_redirect
+    end
+  end
+
+  describe "GET 'index'" do
+    it "should be redirect" do
+      get 'index'
+      response.should be_redirect
+    end
+  end
+
+  describe "GET 'edit'" do
+    it "should be redirect" do
+      get 'edit'
+      response.should be_redirect
+    end
+  end
+
+end

@@ -1,0 +1,4 @@
+<%= text_field_tag_ex %>
+<div id = "form_register" >
+    <%= render(:partial =>"step1")  %>
+</div>

@@ -1,0 +1,62 @@
+<%= flash[:notice] if flash[:notice] %>
+<%= form_tag({:action => "step1"}, :remote => true) do %>
+  <table>
+    <th>
+      ШАГ 1
+    </th>
+    <%= text_field_tag_ex %>
+    <tr>
+      <td>
+        <label>
+          Email: *
+        </label>
+      </td>
+    
+      <td id = "td_email" <%= "style = 'background: red'" if flash[:email] %> >
+        <%= text_field_tag :email, session[:email] %>
+      </td>
+
+      <td id = "error_email" style="color: red;">
+	<%= flash[:email] if flash[:email] %>
+      </td>
+    </tr>
+    
+    <tr>
+      <td>
+        <label>
+          Пароль: *
+        </label>
+      </td>
+    
+      <td id = "td_password" <%= "style = 'background: red'" if flash[:password] %> >
+        <%= password_field_tag :password, session[:password] %>
+      </td>
+        
+      <td id = "error_password" style="color: red;">
+	<%= flash[:password] if flash[:password] %>	
+      </td>
+    </tr>
+        
+    <tr>
+      <td>
+        <label>
+          Подтверждение пароля: *
+        </label>
+      </td>
+    
+      <td id = "td_password_confirmation" <%= "style = 'background: red'" if flash[:password_confirmation] %> >
+        <%= password_field_tag :password_confirmation, session[:password_confirmation] %>
+      </td>
+
+      <td id = "error_password_confirmation" style="color: red;">
+	<%= flash[:password_confirmation] if flash[:password_confirmation] %>
+      </td>
+    </tr>
+
+    <tr>
+      <td colspan = "2">
+        <%= submit_tag "Далее", :id => "next_to_step2"%>
+      </td>
+    </tr>
+  </table>
+<% end %>

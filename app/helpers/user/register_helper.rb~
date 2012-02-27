@@ -1,0 +1,6 @@
+#coding: utf-8
+module User::RegisterHelper
+  def text_field_tag_ex()
+    return "hello"
+  end
+end

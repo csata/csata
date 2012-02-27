@@ -1,0 +1,16 @@
+<table>
+  <% for military_rank in @military_ranks %>
+    <tr>
+      <td>
+        <%= military_rank.name %>
+      </td>
+      <td>
+        <%= button_to("удалить", {:controller => '/admin/dictonary/military_rank', :action => 'destroy', :id => military_rank.id}, :method => :get)%>
+      </td>
+      <td>
+        <%= button_to("изменить", {:controller => '/admin/dictonary/military_rank', :action => 'edit', :id => military_rank.id}, :method => :get)%>
+      </td>
+    <tr>
+  <% end %>
+</table>
+<%= button_to("добавить", {:controller => '/admin/dictonary/military_rank', :action => 'new'}, :method => :get) %>

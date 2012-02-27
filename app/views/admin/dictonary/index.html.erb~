@@ -1,0 +1,17 @@
+<table>
+  <tr>
+    <td>
+      <%= button_to("пол", { :controller => '/admin/dictonary/sex', :action => 'index' }, :method => 'get')%>
+    </td>
+    <td>
+      <%= button_to("воинское звание", { :controller => '/admin/dictonary/military_rank', :action => 'index' }, :method => 'get')%>
+    </td>
+    <td>
+      <%= button_to("научное звание", { :controller => '/admin/dictonary/scientific', :action => 'index' }, :method => 'get')%>
+    </td>
+    <td>
+      <%= button_to("должность", { :controller => '/admin/dictonary/post', :action => 'index' }, :method => 'get')%>
+    </td>
+  </tr>
+</table>
+<%= link_to("назад", { :controller => 'pages/admin', :action => 'index'})%>

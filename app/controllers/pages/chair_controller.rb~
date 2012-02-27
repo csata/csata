@@ -1,0 +1,4 @@
+class Pages::ChairController < ApplicationController
+  def index
+  end
+end

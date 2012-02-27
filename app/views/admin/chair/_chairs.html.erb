@@ -1,0 +1,19 @@
+<table>
+  <% for chair in @chairs %>
+    <tr>
+      <td>
+        <%= chair.name %>
+      </td>
+      <td>
+        <%= button_to("показать", chair_path(chair), :method => :get) %>
+      </td>
+      <td>
+        <%= button_to("удалить", chair_path(chair), :method => :delete) %>
+      </td>
+      <td>
+        <%= button_to("изменить", edit_chair_path(chair), :method => :get) %>
+      </td>
+    <tr>
+  <% end %>
+</table>
+<%= button_to("добавить", new_chair_path, :method => :get) %>

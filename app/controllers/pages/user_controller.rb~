@@ -1,0 +1,4 @@
+class Pages::UserController < ApplicationController
+  def index
+  end
+end

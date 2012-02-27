@@ -1,0 +1,16 @@
+<table>
+  <% for post in @posts %>
+    <tr>
+      <td>
+        <%= post.name %>
+      </td>
+      <td>
+        <%= button_to("удалить", {:controller => '/admin/dictonary/post', :action => 'destroy', :id => post.id})%>
+      </td>
+      <td>
+        <%= button_to("изменить", {:controller => '/admin/dictonary/post', :action => 'edit', :id => post.id}, :method => :get)%>
+      </td>
+    <tr>
+  <% end %>
+</table>
+<%= button_to("добавить", {:controller => '/admin/dictonary/post', :action => 'new'}, :method => :get) %>

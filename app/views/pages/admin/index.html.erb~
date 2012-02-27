@@ -1,0 +1,13 @@
+<table>
+  <tr>
+    <td>
+      <%= button_to("пользователи", { :controller => '/admin/user', :action => 'index' }, :method => 'get')%>
+    </td>
+    <td>
+      <%= button_to("факультеты", { :controller => '/admin/faculty', :action => 'index' }, :method => 'get')%>
+    </td>
+    <td>
+      <%= button_to("словари", { :controller => '/admin/faculty', :action => 'index' }, :method => 'get')%>
+    </td>
+  </tr>
+</table>

@@ -1,0 +1,12 @@
+#coding: utf-8
+require 'spec_helper'
+
+describe Sex do
+  before(:each) do
+    @attr = { :name => "мужской" }
+  end
+
+  it "should create a new instance given valid attributes" do
+    Sex.create!(@attr)
+  end
+end

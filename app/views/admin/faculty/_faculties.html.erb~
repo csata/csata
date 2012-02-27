@@ -1,0 +1,19 @@
+<table>
+  <% for faculty in @faculties %>
+    <tr>
+      <td>
+        <%= faculty.name %>
+      </td>
+      <td>
+        <%= button_to("показать", { :controller => 'admin/faculty', :action => 'show', :id => faculty }, :method => :get) %>
+      </td>
+      <td>
+        <%= button_to("удалить", { :controller => 'admin/faculty', :action => 'destroy', :id => faculty }, :method => :delete) %>
+      </td>
+      <td>
+        <%= button_to("изменить", { :controller => 'admin/faculty', :action => 'edit', :id => faculty }, :method => :get) %>
+      </td>
+    <tr>
+  <% end %>
+</table>
+<%= button_to("добавить", { :controller => 'admin/faculty', :action => 'new', :id => faculty }, :method => :get) %>

@@ -1,0 +1,16 @@
+require 'spec_helper'
+
+describe Chair do
+  before(:each) do
+    @attr = { :email => "user@example.com",
+              :password => "123456",
+              :password_confirmation => "123456",
+              :last_name => "Пупкин",
+              :first_name => "Иван",
+              :middle_name => "Дмитриевич" }
+  end
+
+  it "should create a new instance given valid attributes" do
+    User.create!(@attr)
+  end
+end
